@@ -10,7 +10,7 @@ public class RocketMovementexperimental : MonoBehaviour
 
     private void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>;
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Start is called before the first frame update
@@ -24,7 +24,9 @@ public class RocketMovementexperimental : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
 
-        
+        var rot = transform.rotation;
+        rot.z += horizontal * Time.deltaTime;
+        transform.rotation = rot;
 
 
     }
