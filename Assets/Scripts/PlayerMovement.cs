@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float velocity=.011f;
-    [SerializeField] float acceleration = 0.01f;
-    [SerializeField] float rocketVelocity=.1f;
+    
+    [SerializeField] float rocketVelocity=1f;
+    [SerializeField] float rotationVelocity=1f;
     Rigidbody2D rigidBody;
     // Start is called before the first frame update
     private void Awake() {
@@ -20,9 +20,25 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var movement = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(movement,0,0) * Time.deltaTime * velocity;
-        rigidBody.AddForce(new Vector2(0,rocketVelocity),ForceMode2D.Impulse);
+        
+       PMovement();
+
+
+    }
+    void PMovement()
+    {
+        
+       Quaternion rot = transform.rotation;
+       float z = rot.eulerAngles.z;
+
+       z -= Input.GetAxis("Horizontal") * rotationVelocity * Time.deltaTime;
+       rot = Quaternion.Euler(0,0,z);
+       transform.rotation = rot;
+
+       Vector3 pos = transform.position;
+       rigidBody.AddForce(transform.up* rocketVelocity * Time.deltaTime,ForceMode2D.Force);
+       
+       transform.position = pos;
 
 
     }

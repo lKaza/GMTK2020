@@ -30,7 +30,6 @@ public class PlatformGeneration : MonoBehaviour
                 GenerateFlatPlatform(x);
                 repeatValue--;
             }
-            
         }
     }
 
