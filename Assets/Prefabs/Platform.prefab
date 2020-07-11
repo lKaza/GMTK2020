@@ -337,4 +337,6 @@ MonoBehaviour:
   maxHeight: 15
   dirt: {fileID: 665547936676147848, guid: 075a9bbbc988e31479cecded3b243d12, type: 3}
   grass: {fileID: 2145510567969216090, guid: a9c3997655ec83042a22f9c5a9ec4510, type: 3}
+  crate: {fileID: 379708131805975829, guid: 2c768a2ab0c6a834c9b6a4d377505be4, type: 3}
+  crate2: {fileID: 0}
   repeatNum: 5

@@ -21,28 +21,29 @@ public class CrateBomb : MonoBehaviour
         var boxrotation = transform.rotation;
 
         boxrotation.z = UnityEngine.Random.Range(minangl, maxangl);
-        Debug.Log(boxrotation.z);
+        
         transform.rotation = boxrotation;
 
         rigidbody2D.AddForce(transform.up * boxforce, ForceMode2D.Impulse);
 
+        Destroy(gameObject, boxtime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(boxtime <= 0)
-        {
-            Destroy(gameObject);
-        }
-        boxtime = boxtime - Time.deltaTime;
+      
+            
+              
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if(other.gameObject.tag=="Player"){
+            Destroy(gameObject);
+        }
         
-        Destroy(gameObject);
     }
 
-
+    
 }

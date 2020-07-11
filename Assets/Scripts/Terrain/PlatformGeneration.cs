@@ -6,7 +6,7 @@ public class PlatformGeneration : MonoBehaviour
 {
     [SerializeField] int width,height;
     [SerializeField] int minHeight,maxHeight;
-    [SerializeField] GameObject dirt, grass;
+    [SerializeField] GameObject dirt, grass,crate,crate2;
     [SerializeField] int repeatNum;
     
    
@@ -33,6 +33,8 @@ public class PlatformGeneration : MonoBehaviour
         }
         for (int x = startPosition; x < width; x++)
         {
+            
+           
             if(repeatValue == 0)
             {
                 GetRandomHeight();
@@ -79,9 +81,8 @@ public class PlatformGeneration : MonoBehaviour
     void ReSpawn(){
 
     }
+    
     public int GetCurrentStartPos(){
-        print(width);
-        print(currentStartPosition);
         return currentStartPosition;
     }
 }
