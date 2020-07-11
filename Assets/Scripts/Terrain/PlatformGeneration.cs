@@ -8,17 +8,30 @@ public class PlatformGeneration : MonoBehaviour
     [SerializeField] int minHeight,maxHeight;
     [SerializeField] GameObject dirt, grass;
     [SerializeField] int repeatNum;
-
+    
+   
+    int widthIncreaseSize =0;
+    int currentStartPosition;
+    ContactPoint2D[] contacts = new ContactPoint2D[10];
     // Start is called before the first frame update
+    private void Awake() {
+        widthIncreaseSize = width;
+        currentStartPosition = width;
+    }
     void Start()
     {
-        Generation();
+        
+        Generation(0);
     }
 
-    private void Generation()
+    public void Generation(int startPosition)
     {
         int repeatValue = 0;
-        for (int x = 0; x < width; x++)
+        if(startPosition == currentStartPosition){
+            width = width+widthIncreaseSize;
+            currentStartPosition = currentStartPosition+widthIncreaseSize;
+        }
+        for (int x = startPosition; x < width; x++)
         {
             if(repeatValue == 0)
             {
@@ -48,7 +61,7 @@ public class PlatformGeneration : MonoBehaviour
        
         height = UnityEngine.Random.Range(minHeight, maxHeight);
     }
-
+    
 
     // Update is called once per frame
     void Update()
@@ -57,8 +70,18 @@ public class PlatformGeneration : MonoBehaviour
     }
     void spawnObj(GameObject obj, int width, int height)
     {
+        
         obj = Instantiate(obj, new Vector2(width, height), Quaternion.identity);
         obj.transform.parent = this.transform;
        
+    }
+  
+    void ReSpawn(){
+
+    }
+    public int GetCurrentStartPos(){
+        print(width);
+        print(currentStartPosition);
+        return currentStartPosition;
     }
 }
