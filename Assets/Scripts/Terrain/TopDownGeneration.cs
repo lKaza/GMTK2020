@@ -19,7 +19,7 @@ public class TopDownGeneration : MonoBehaviour
         generatemap(mappos);
     }
 
-    void generatemap(new Vector2 drawpos)
+    void generatemap(Vector2 drawpos)
     {
         GameObject BackGroundMap = Instantiate(bckgrndtile1, new Vector2(0, 0), Quaternion.identity);
     }

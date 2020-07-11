@@ -26,23 +26,29 @@ public class CrateBomb : MonoBehaviour
 
         rigidbody2D.AddForce(transform.up * boxforce, ForceMode2D.Impulse);
 
-        Destroy(gameObject, boxtime);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
       
-            
-              
+    }
+void Update()
+    {
+        if (this.gameObject.activeSelf)
+        {
+            Invoke("DeactivateToPool", boxtime);
+        }
+
+
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag=="Player"){
-            Destroy(gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            gameObject.SetActive(false);
         }
-        
+
+    }
+    void DeactivateToPool()
+    {
+        gameObject.SetActive(false);
     }
 
     

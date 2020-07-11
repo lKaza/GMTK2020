@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64926e029aa3f3478681afa01b02aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxtime: 10
+  boxtime: 3
   boxforce: 0.6
   maxangl: 0
   minangl: -1
