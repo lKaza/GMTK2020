@@ -7,14 +7,16 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] float rocketVelocity=1f;
     [SerializeField] float rotationVelocity=1f;
+    [SerializeField] float reduceVelocityOverTime = 2f;
     Rigidbody2D rigidBody;
+    float deltaVelocity;
     // Start is called before the first frame update
     private void Awake() {
         rigidBody = GetComponent<Rigidbody2D>();
     }
     void Start()
     {
-        
+        //StartCoroutine(ReduceAngularVelocity(reduceVelocityOverTime));
     }
 
     // Update is called once per frame
@@ -41,5 +43,16 @@ public class PlayerMovement : MonoBehaviour
        transform.position = pos;
 
 
+    }
+    IEnumerator ReduceAngularVelocity(float transitionTime)
+    {
+  
+        while (rigidBody.angularVelocity > 1)
+        {
+            deltaVelocity = Time.deltaTime / transitionTime;
+            rigidBody.angularVelocity -= deltaVelocity;
+            yield return transitionTime;
+        }
+        
     }
 }
