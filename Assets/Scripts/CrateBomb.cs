@@ -22,6 +22,9 @@ public class CrateBomb : MonoBehaviour
     public float maxangl;
     public float minangl;
 
+    AudioSource myAudioSource;
+    public AudioClip impact;
+
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -33,15 +36,13 @@ public class CrateBomb : MonoBehaviour
         transform.rotation = boxrotation;
 
         rigidbody2D.AddForce(transform.up * boxforce, ForceMode2D.Impulse);
-
-      
+        
+        myAudioSource = GetComponent<AudioSource>();
+      StartCoroutine(Deactivate());
     }
 void Update()
     {
-        if (this.gameObject.activeSelf)
-        {
-            Invoke("DeactivateToPool", boxtime);
-        }
+      
 
 
     }
@@ -51,6 +52,7 @@ void Update()
         if (other.gameObject.tag == "Player")
         {
             Explode();
+            myAudioSource.Play();
             other.gameObject.GetComponent<Health>().TakeDmg(boxDamage);
             StartCoroutine(Deactivate());
             
@@ -62,6 +64,7 @@ void Update()
     void Explode(){
         
         Explosion.Play();
+        
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position,fieldOfImpact,layerToHit);
         foreach(Collider2D obj in objects)
@@ -69,7 +72,7 @@ void Update()
             Vector2 direction = obj.transform.position - transform.position;
             obj.GetComponent<Rigidbody2D>().AddForce(direction*force);
         }
-        
+        myAudioSource.Stop();
     }
     private void OnDrawGizmosSelected() {
     Gizmos.color = Color.red;

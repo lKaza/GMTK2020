@@ -83,8 +83,8 @@ public class TriggerGeneration : MonoBehaviour
     public void CreateRandomCrate(Transform startPosition)
     {
 
-        float randomPosXrange = UnityEngine.Random.Range(startPosition.transform.position.x -crateoffsetX, startPosition.transform.position.x);
-        float randomPosYrange = UnityEngine.Random.Range(startPosition.transform.position.y +crateoffsetY, startPosition.transform.position.y);
+        float randomPosXrange = UnityEngine.Random.Range(startPosition.transform.position.x -crateoffsetX, startPosition.transform.position.x + crateoffsetX);
+        float randomPosYrange = UnityEngine.Random.Range(startPosition.transform.position.y +crateoffsetY, startPosition.transform.position.y - crateoffsetY);
 
         GameObject crate = BombPool.SharedInstance.GetPooledObject();
 

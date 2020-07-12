@@ -22,9 +22,9 @@ public class ballbomb : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 boompos = new Vector2();
+       
 
         //como eso?
         //
