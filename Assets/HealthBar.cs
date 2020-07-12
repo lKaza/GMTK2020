@@ -20,6 +20,21 @@ public class HealthBar : MonoBehaviour
 
     IEnumerator ChangetoPct(float pct)
     {
+        if (pct >= 0.9f - Mathf.Epsilon)
+        {
+            foreground.GetComponent<Image>().color = new Color32(16, 255, 0, 255); //verde
+            
+        }
+        if (pct <= 0.75f - Mathf.Epsilon)
+        {
+            foreground.GetComponent<Image>().color = new Color32(255, 255, 0, 255); //rojo //verde
+        }
+        if (pct <= 0.25f - Mathf.Epsilon)
+        {
+            foreground.GetComponent<Image>().color = new Color32(255, 0, 0, 255); //rojo //verde
+        }
+        
+
         float preChangePct = foreground.fillAmount;
         float elapsed = 0f;
         while (elapsed < updateSpeedSeconds)
@@ -29,5 +44,6 @@ public class HealthBar : MonoBehaviour
             yield return null;
         }
         foreground.fillAmount = pct;
+        
     }
 }
