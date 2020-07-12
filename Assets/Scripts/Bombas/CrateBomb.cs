@@ -25,41 +25,56 @@ public class CrateBomb : MonoBehaviour
     AudioSource myAudioSource;
     public AudioClip impact;
 
+private void Awake() {
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        myAudioSource = GetComponent<AudioSource>();
+}
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        
+        AddRotation();
+        
+        StartCoroutine(Deactivate());
+    }
 
+    private void AddRotation()
+    {
         var boxrotation = transform.rotation;
 
         boxrotation.z = UnityEngine.Random.Range(minangl, maxangl);
-        
+
         transform.rotation = boxrotation;
 
         rigidbody2D.AddForce(transform.up * boxforce, ForceMode2D.Impulse);
-        
-        myAudioSource = GetComponent<AudioSource>();
-         StartCoroutine(Deactivate());
     }
-void Update()
+
+    void Update()
     {
       
 
 
+    }
+    private void OnEnable() {
+        AddRotation();
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Explode();
-            myAudioSource.Play();
-            other.gameObject.GetComponent<Health>().TakeDmg(boxDamage);
-            StartCoroutine(Deactivate());
-            
+            CreateExplosion(other);
+
         }
         StartCoroutine(Deactivate());
     }
-  
+
+    public void CreateExplosion(Collision2D other)
+    {
+        Explode();
+        myAudioSource.Play();
+        other.gameObject.GetComponent<Health>().TakeDmg(boxDamage);
+        StartCoroutine(Deactivate());
+    }
 
     void Explode(){
         

@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject GameOverUI;
 
     // Update is called once per frame
     void Update()
@@ -20,11 +21,13 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+        if(Input.GetKeyDown(KeyCode.R)){
+            Reload();
+        }
     }
 
     public void Resume()
-    {
-       
+    {  
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;
@@ -42,6 +45,17 @@ public class PauseMenu : MonoBehaviour
     }
     public void Quit(){
         Application.Quit();
+    }
+    public void GameOverScreen(){
+        GameOverUI.SetActive(true);
+        
+    }
+
+    public void Reload(){
+        Scene scene = SceneManager.GetActiveScene();
+        GameOverUI.SetActive(false);
+        SceneManager.LoadScene(scene.buildIndex);
+
     }
 
 }
