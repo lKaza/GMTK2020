@@ -455,7 +455,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: cabd47686f603ee49b3ed9f3f70f005c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.306
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -971,6 +971,10 @@ PrefabInstance:
     - target: {fileID: 781361469, guid: 3c470a14d4f119740bee709e3adef4ab, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
       value: 0.40392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981350200, guid: 3c470a14d4f119740bee709e3adef4ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2116224092, guid: 3c470a14d4f119740bee709e3adef4ab, type: 3}
       propertyPath: player
