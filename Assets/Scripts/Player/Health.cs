@@ -43,6 +43,7 @@ public class Health : MonoBehaviour
     private void Die()
     {
         // set trigger animator
+        FindObjectOfType<PauseMenu>().GameOverScreen();
         
     }
 }

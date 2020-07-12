@@ -22,8 +22,8 @@ public class BombSpawner : MonoBehaviour
         
 
         for(int i =0; i<crateQuantity;i++){
-                float randomPosXrange = UnityEngine.Random.Range(startPosition.transform.position.x - crateoffsetX, startPosition.transform.position.x + crateoffsetX);
-                float randomPosYrange = UnityEngine.Random.Range(startPosition.transform.position.y + crateoffsetY, startPosition.transform.position.y - crateoffsetY);
+                float randomPosXrange = UnityEngine.Random.Range(startPosition.transform.position.x , startPosition.transform.position.x + crateoffsetX);
+                float randomPosYrange = UnityEngine.Random.Range(startPosition.transform.position.y + crateoffsetY, startPosition.transform.position.y +5);
        
         GameObject crate = BombPool.SharedInstance.GetPooledObject();
 

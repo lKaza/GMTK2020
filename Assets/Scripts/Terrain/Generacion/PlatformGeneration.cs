@@ -126,4 +126,5 @@ public class PlatformGeneration : MonoBehaviour
     {
         return lastNegativeXPosition;
     }
+    
 }
