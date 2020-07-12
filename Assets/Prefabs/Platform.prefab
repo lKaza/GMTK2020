@@ -42,10 +42,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 15, y: 20}
+  m_Offset: {x: 15, y: 40}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -71,6 +71,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMap: {fileID: 732153136844210202}
+  triggerOrientation: 1
+  crates: {fileID: 379708131805975829, guid: 2c768a2ab0c6a834c9b6a4d377505be4, type: 3}
+  crateoffsetX: -10
+  crateoffsetY: 10
+  crateQuantity: 15
 --- !u!1 &986028237
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +118,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 15, y: 0}
@@ -142,6 +147,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMap: {fileID: 732153136844210202}
+  triggerOrientation: 3
+  crates: {fileID: 379708131805975829, guid: 2c768a2ab0c6a834c9b6a4d377505be4, type: 3}
+  crateoffsetX: -10
+  crateoffsetY: 10
+  crateQuantity: 15
 --- !u!1 &1583834123
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +197,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 30, y: 10}
+  m_Offset: {x: 30, y: 20}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -198,7 +208,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13, y: 21}
+  m_Size: {x: 0.13, y: 40}
   m_EdgeRadius: 0
 --- !u!114 &1583834126
 MonoBehaviour:
@@ -213,6 +223,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMap: {fileID: 732153136844210202}
+  triggerOrientation: 2
+  crates: {fileID: 379708131805975829, guid: 2c768a2ab0c6a834c9b6a4d377505be4, type: 3}
+  crateoffsetX: -10
+  crateoffsetY: 10
+  crateQuantity: 15
 --- !u!1 &1937720734
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +273,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.81, y: 10}
+  m_Offset: {x: -0.81, y: 20}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -269,7 +284,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13, y: 21}
+  m_Size: {x: 0.13, y: 40.11}
   m_EdgeRadius: 0
 --- !u!114 &1937720737
 MonoBehaviour:
@@ -284,6 +299,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMap: {fileID: 732153136844210202}
+  triggerOrientation: 0
+  crates: {fileID: 379708131805975829, guid: 2c768a2ab0c6a834c9b6a4d377505be4, type: 3}
+  crateoffsetX: -10
+  crateoffsetY: 10
+  crateQuantity: 15
 --- !u!1 &732153136844210201
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,12 +351,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d93a6c3e33203041a2a48c8d816c6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 10
-  height: 100
+  width: 30
   minHeight: 5
   maxHeight: 15
   dirt: {fileID: 665547936676147848, guid: 075a9bbbc988e31479cecded3b243d12, type: 3}
   grass: {fileID: 2145510567969216090, guid: a9c3997655ec83042a22f9c5a9ec4510, type: 3}
   crate: {fileID: 379708131805975829, guid: 2c768a2ab0c6a834c9b6a4d377505be4, type: 3}
   crate2: {fileID: 0}
-  repeatNum: 5
+  repeatNum: 2
