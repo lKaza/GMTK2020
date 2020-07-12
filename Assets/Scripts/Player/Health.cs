@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     private void Awake() {
         currentHealth = maxHealth;
     }
+    public event Action<float> OnHealthPcChanged = delegate { };
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,8 @@ public class Health : MonoBehaviour
     }
     public void TakeDmg(int dmg){
         currentHealth = currentHealth-dmg;
+        float currentHPPc = (float)currentHealth / (float)maxHealth;
+        OnHealthPcChanged(currentHPPc);
         if(currentHealth<=0 && !isDead){
             isDead= true;
             Die();
@@ -34,6 +37,9 @@ public class Health : MonoBehaviour
         return isDead;
     }
 
+    public int GetCurrentHealth(){
+        return currentHealth;
+    }
     private void Die()
     {
         // set trigger animator
