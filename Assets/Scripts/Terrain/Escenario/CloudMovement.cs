@@ -36,8 +36,16 @@ public class CloudMovement : MonoBehaviour
         playerpos = player.transform.position;
         //boxcalculator();
         icloudcalc();//independient cloud calculator
+        clouddisplacement();
     }
 
+    void clouddisplacement()
+    {
+        for(int i = 0; i <= totalcloud; i++)
+        {
+            cloudcontainerarray[i].transform.position = new Vector2((cloudcontainerarray[i].transform.position.x - (cloudspeed / 200)), cloudcontainerarray[i].transform.position.y); 
+        }
+    }
     void icloudcalc()
     {
         for(int i = 0; i <= totalcloud; i++){

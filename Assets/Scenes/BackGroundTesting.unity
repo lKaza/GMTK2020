@@ -367,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57eb39f46f520d544ba1d3e8b4ab7893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialImpulse: 20
 --- !u!50 &546747752
 Rigidbody2D:
   serializedVersion: 4
@@ -1122,6 +1123,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1158409538}
+    - target: {fileID: 4164000211811785909, guid: 6e84573205803ea49b646f62c70b81c0,
+        type: 3}
+      propertyPath: cloudspeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4164000211811785910, guid: 6e84573205803ea49b646f62c70b81c0,
         type: 3}
       propertyPath: m_Name
