@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4729287044266335390}
   - component: {fileID: 7989106774225740316}
   - component: {fileID: 4897070161458716925}
+  - component: {fileID: -7275273012254584901}
   m_Layer: 0
   m_Name: Roketto
   m_TagString: Untagged
@@ -157,6 +158,19 @@ PolygonCollider2D:
       - {x: 0.28743976, y: 0.37101814}
       - {x: 0.0016227532, y: 0.6514686}
       - {x: -0.282246, y: 0.3712754}
+--- !u!114 &-7275273012254584901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066203910432766838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5f20eba123ea1499db47b792660936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
 --- !u!1001 &7525072565217487144
 PrefabInstance:
   m_ObjectHideFlags: 0

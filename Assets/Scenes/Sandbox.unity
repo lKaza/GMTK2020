@@ -370,7 +370,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 118518687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14177aea60f3514abd78bef693a3754, type: 3}
+  m_Script: {fileID: 11500000, guid: 4402a1bd27f91494585493e3e74c2a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &184534957
@@ -815,6 +815,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 910020649}
     m_Modifications:
+    - target: {fileID: -7275273012254584901, guid: a9efb5ebea5f20a4d8604b19fb2d8bc9,
+        type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4729287044266335390, guid: a9efb5ebea5f20a4d8604b19fb2d8bc9,
         type: 3}
       propertyPath: rocketVelocity
@@ -825,6 +830,11 @@ PrefabInstance:
       propertyPath: rotationVelocity
       value: 360
       objectReference: {fileID: 0}
+    - target: {fileID: 6541415898874072119, guid: a9efb5ebea5f20a4d8604b19fb2d8bc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7066203910432766838, guid: a9efb5ebea5f20a4d8604b19fb2d8bc9,
         type: 3}
       propertyPath: m_Name
@@ -834,6 +844,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066203910432766838, guid: a9efb5ebea5f20a4d8604b19fb2d8bc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150358868674367904, guid: a9efb5ebea5f20a4d8604b19fb2d8bc9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7989106774225740316, guid: a9efb5ebea5f20a4d8604b19fb2d8bc9,
         type: 3}
@@ -1432,7 +1452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 910020649}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1853,6 +1873,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crate_bomb 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727090124406341324, guid: 2c768a2ab0c6a834c9b6a4d377505be4,
+        type: 3}
+      propertyPath: fieldOfImpact
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727090124406341324, guid: 2c768a2ab0c6a834c9b6a4d377505be4,
+        type: 3}
+      propertyPath: force
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727090124406341324, guid: 2c768a2ab0c6a834c9b6a4d377505be4,
+        type: 3}
+      propertyPath: layerToHit.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 7488513165025595842, guid: 2c768a2ab0c6a834c9b6a4d377505be4,
         type: 3}
