@@ -10,6 +10,14 @@ public class CrateBomb : MonoBehaviour
     float boxspeed;
     public float boxtime = 5;
     public float boxforce = 1;
+    [SerializeField] int boxDamage=5;
+
+    [SerializeField] float fieldOfImpact;
+    [SerializeField] float force;
+    public LayerMask layerToHit;
+
+    [SerializeField] ParticleSystem Explosion;
+
     Vector2 boxinercy = new Vector2(0,1);
     public float maxangl;
     public float minangl;
@@ -42,14 +50,35 @@ void Update()
     {
         if (other.gameObject.tag == "Player")
         {
-            gameObject.SetActive(false);
+            Explode();
+            other.gameObject.GetComponent<Health>().TakeDmg(boxDamage);
+            StartCoroutine(Deactivate());
+            
         }
 
     }
-    void DeactivateToPool()
-    {
-        gameObject.SetActive(false);
-    }
+  
 
+    void Explode(){
+        
+        Explosion.Play();
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position,fieldOfImpact,layerToHit);
+        foreach(Collider2D obj in objects)
+        {
+            Vector2 direction = obj.transform.position - transform.position;
+            obj.GetComponent<Rigidbody2D>().AddForce(direction*force);
+        }
+        
+    }
+    private void OnDrawGizmosSelected() {
+    Gizmos.color = Color.red;
+    Gizmos.DrawWireSphere(transform.position,fieldOfImpact);    
+    }
+    IEnumerator Deactivate(){
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+    }
     
 }

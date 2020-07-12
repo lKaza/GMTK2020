@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4729287044266335390}
   - component: {fileID: 7989106774225740316}
   - component: {fileID: 4897070161458716925}
+  - component: {fileID: -7275273012254584901}
   m_Layer: 0
   m_Name: Roketto
   m_TagString: Player
@@ -73,7 +74,11 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
   m_SortingOrder: 50
+=======
+  m_SortingOrder: 100
+>>>>>>> becf05e6e0041b39f5b067c5fc9f6d62379ea38c
   m_Sprite: {fileID: 21300000, guid: 06abbb326d1837b4fbd866b0a01ab668, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +103,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketVelocity: 300
+<<<<<<< HEAD
   rotationVelocity: 300
+=======
+  rotationVelocity: 180
+  reduceVelocityOverTime: 2
+>>>>>>> becf05e6e0041b39f5b067c5fc9f6d62379ea38c
 --- !u!50 &7989106774225740316
 Rigidbody2D:
   serializedVersion: 4
@@ -112,8 +122,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
+<<<<<<< HEAD
   m_LinearDrag: 1.05
   m_AngularDrag: 0.05
+=======
+  m_LinearDrag: 0
+  m_AngularDrag: 2
+>>>>>>> becf05e6e0041b39f5b067c5fc9f6d62379ea38c
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -156,6 +171,19 @@ PolygonCollider2D:
       - {x: 0.28743976, y: 0.37101814}
       - {x: 0.0016227532, y: 0.6514686}
       - {x: -0.282246, y: 0.3712754}
+--- !u!114 &-7275273012254584901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066203910432766838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5f20eba123ea1499db47b792660936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
 --- !u!1001 &7525072565217487144
 PrefabInstance:
   m_ObjectHideFlags: 0
