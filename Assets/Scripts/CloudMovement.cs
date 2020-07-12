@@ -13,6 +13,7 @@ public class CloudMovement : MonoBehaviour
     [SerializeField] public float length = 10 ;
     [SerializeField] public float rightdistance;
     [SerializeField] public float leftdistance;
+    [SerializeField] public float clouddistance = 20;
     [SerializeField] public GameObject player;
     float totalcloud;
 
@@ -33,14 +34,36 @@ public class CloudMovement : MonoBehaviour
     {
         
         playerpos = player.transform.position;
-        boxcalculator();
+        //boxcalculator();
+        icloudcalc();//independient cloud calculator
+    }
 
+    void icloudcalc()
+    {
+        for(int i = 0; i <= totalcloud; i++){
+            if (cloudcontainerarray[i].gameObject.transform.position.x < (playerpos.x - clouddistance))
+            {
+                cloudcontainerarray[i].transform.position = new Vector2(player.transform.position.x + clouddistance + Random.Range(-2,10), player.transform.position.y + Random.Range(-6,15));
+            }
+        }
+        
+
+        /*
+         * for(int i = 0; i <= totalcloud; i++)
+        {
+            if(cloudcontainerarray[i].gameObject.transform.position.x < leftdistance)
+            {
+                transform.position = new Vector2(cloudcontainerarray[i].gameObject.transform.position.x + length, 0);
+            }
+        }
+         */
     }
     void cloudstart()
     {
         cloudcontainer = GameObject.Find("cloudscontainer");
         cloudspeed = 1;
         cloudfinder();
+
         leftdistance = 0;
         rightdistance = length;
     }
@@ -52,6 +75,7 @@ public class CloudMovement : MonoBehaviour
             boxcloudpos.x = boxcloudpos.x + 1;
             leftdistance = rightdistance;
             rightdistance = length * boxcloudpos.x;
+
             generatecloud();
         }
     }
