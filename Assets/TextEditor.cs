@@ -6,8 +6,9 @@ using UnityEngine;
 public class TextEditor : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] Transform player;
     [SerializeField] float timeforScore=0.5f;
-    int score;
+    float score;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class TextEditor : MonoBehaviour
         while (true)
         { //forever
         score++;
+        score +=player.transform.position.x;
             yield return new WaitForSeconds(timeforScore);
         }
         

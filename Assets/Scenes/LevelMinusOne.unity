@@ -683,7 +683,7 @@ PrefabInstance:
     - target: {fileID: 4164000211811785909, guid: 6e84573205803ea49b646f62c70b81c0,
         type: 3}
       propertyPath: cloudspeed
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4164000211811785910, guid: 6e84573205803ea49b646f62c70b81c0,
         type: 3}
@@ -972,6 +972,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.a
       value: 0.40392157
       objectReference: {fileID: 0}
+    - target: {fileID: 2116224092, guid: 3c470a14d4f119740bee709e3adef4ab, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 546363380}
     - target: {fileID: 4572291717430634806, guid: 3c470a14d4f119740bee709e3adef4ab,
         type: 3}
       propertyPath: m_Name
@@ -1834,7 +1838,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.32156864, g: 0.7960785, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

@@ -7,14 +7,14 @@ public class CloudMovement : MonoBehaviour
 {
 
     //Marco de generación
-    [SerializeField] public Vector2 boxcloudpos = new Vector2(0,0);
+    [SerializeField]  Vector2 boxcloudpos = new Vector2(0,0);
     
-    [SerializeField] public float height = 15;
-    [SerializeField] public float length = 10 ;
-    [SerializeField] public float rightdistance;
-    [SerializeField] public float leftdistance;
-    [SerializeField] public float clouddistance = 20;
-    [SerializeField] public GameObject player;
+    [SerializeField]  float height = 15;
+    [SerializeField]  float length = 10 ;
+    [SerializeField]  float rightdistance;
+    [SerializeField]  float leftdistance;
+    [SerializeField]  float clouddistance = 20;
+    [SerializeField]  GameObject player;
     float totalcloud;
 
     public GameObject cloudcontainer;
@@ -69,7 +69,7 @@ public class CloudMovement : MonoBehaviour
     void cloudstart()
     {
         cloudcontainer = GameObject.Find("cloudscontainer");
-        cloudspeed = 1;
+       
         cloudfinder();
 
         leftdistance = 0;
