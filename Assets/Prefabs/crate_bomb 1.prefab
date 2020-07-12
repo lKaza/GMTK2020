@@ -102,10 +102,10 @@ MonoBehaviour:
   boxforce: 0.6
   boxDamage: 5
   fieldOfImpact: 3.5
-  force: 3000
+  force: 1500
   layerToHit:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   Explosion: {fileID: 5015488530927235843}
   maxangl: 0
   minangl: -1

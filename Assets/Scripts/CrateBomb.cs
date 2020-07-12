@@ -38,7 +38,7 @@ public class CrateBomb : MonoBehaviour
         rigidbody2D.AddForce(transform.up * boxforce, ForceMode2D.Impulse);
         
         myAudioSource = GetComponent<AudioSource>();
-      StartCoroutine(Deactivate());
+         StartCoroutine(Deactivate());
     }
 void Update()
     {
@@ -57,7 +57,7 @@ void Update()
             StartCoroutine(Deactivate());
             
         }
-
+        StartCoroutine(Deactivate());
     }
   
 
@@ -78,6 +78,7 @@ void Update()
     Gizmos.color = Color.red;
     Gizmos.DrawWireSphere(transform.position,fieldOfImpact);    
     }
+
     IEnumerator Deactivate(){
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);

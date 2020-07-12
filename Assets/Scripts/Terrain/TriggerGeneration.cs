@@ -43,11 +43,7 @@ public class TriggerGeneration : MonoBehaviour
 
                 trigger.transform.position = offsetPos;
             }
-            while (cratecounter < crateQuantity)
-            {
-                CreateRandomCrate(other.transform);
-                cratecounter++;
-            }
+            
 
             newMap.Generation(startPos, side);
         }
